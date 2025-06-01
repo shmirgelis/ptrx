@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Bus manager</label>
+    <navType>Standard</navType>
+    <tabs>Passenger__c</tabs>
+    <tabs>Bus__c</tabs>
+    <tabs>Bus_Company__c</tabs>
+    <tabs>Bus_Manager_View</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Passenger_UtilityBar</utilityBar>
+</CustomApplication>
