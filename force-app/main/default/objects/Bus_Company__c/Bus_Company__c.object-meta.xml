@@ -152,14 +152,14 @@
     <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ControlledByParent</externalSharingModel>
-    <label>Passenger</label>
+    <externalSharingModel>Private</externalSharingModel>
+    <label>Bus Company</label>
     <nameField>
-        <label>Passenger Name</label>
+        <label>Bus Company Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Passengers</pluralLabel>
+    <pluralLabel>Bus Companies</pluralLabel>
     <searchLayouts></searchLayouts>
-    <sharingModel>ControlledByParent</sharingModel>
+    <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

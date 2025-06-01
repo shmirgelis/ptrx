@@ -1,0 +1,29 @@
+<template>
+    <lightning-button
+        label="Click To Update Bus Status"
+        onclick={handleRunBatch}
+        variant="brand"
+        class="slds-m-bottom_medium">
+    </lightning-button>
+    <template if:true={companies}>
+        <template for:each={companies} for:item="companyWrap">
+            <div key={companyWrap.company.Id} class="company-table" style="margin-bottom:2rem;">
+                <h2 class="company-header">
+                    <span class="company-label">Bus Company: </span>
+                    <span class="company-name">{companyWrap.company.Name}</span>
+                </h2>
+                <lightning-card>
+                    <lightning-datatable
+                        key-field="Id"
+                        data={companyWrap.buses}
+                        columns={columns}
+                        hide-checkbox-column="true">
+                    </lightning-datatable>
+                </lightning-card>
+            </div>
+        </template>
+    </template>
+    <template if:true={error}>
+        <p class="slds-text-color_error">Error: {error.body.message}</p>
+    </template>
+</template>

@@ -1,0 +1,22 @@
+.company-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+}
+.company-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+}
+.small-col {
+    font-size: 0.85rem;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.passenger-col {
+    white-space: normal;
+    word-break: break-word;
+    max-width: 100%;
+}
