@@ -1,6 +1,6 @@
 import { LightningElement, wire } from 'lwc';
 import getBusCompaniesWithBusesAndPassengers from '@salesforce/apex/BusController.getBusCompaniesWithBusesAndPassengers';
-import runBusStatusUpdateBatch from '@salesforce/apex/BusController.runBusStatusUpdateBatch'; // Add this import
+import runBusStatusUpdateBatch from '@salesforce/apex/BusController.runBusStatusUpdateBatch'; 
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class BusManagerView extends LightningElement {

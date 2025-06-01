@@ -1,18 +1,59 @@
-# Salesforce DX Project: Next Steps
+# Bus Manager App – Overview
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+The Bus Manager App is a Salesforce Lightning application that helps with the management of bus companies, buses, and passengers.
+Key Features:
+* View and manage all bus companies, with quick access to related buses and passengers.
+* For each company, see a detailed table of buses, including bus name, status (color-coded for clarity), and number of passengers.
+* Easily view and manage passengers assigned to each bus, with names displayed directly in the bus table.
+* Update all bus statuses with a single click using the "Click To Update Bus Status" button in "Bus Manager View" tab, which    automatically sets status based on passenger count (Available, Limited Seats, Full, Over Capacity).
 
-## How Do You Plan to Deploy Your Changes?
+App Navigation
+The app is organized into four main tabs for easy navigation:
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+Bus Companies:
+Manage bus company records and view related buses and passengers.
 
-## Configure Your Salesforce DX Project
+Buses:
+Create, view, and update bus records, including status and passenger count.
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+Passengers:
+Manage passenger records and assign them to buses.
 
-## Read All About It
+Bus Manager View:
+An interactive dashboard displaying all companies, their buses, and passengers in a single view, with bus status update functionality.
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+
+## Bus Manager App – High Level Technical Overview
+
+The Bus Manager App is a modular Salesforce Lightning application designed for efficient management of transportation data. It leverages Salesforce’s platform features, custom metadata, and Lightning Web Components (LWC) for a robust, scalable solution.
+
+## Architecture & Components
+
+Custom Objects:
+Bus_Company__c: Represents a bus company.
+Bus__c: Represents a bus, related to a company and passengers.
+Passenger__c: Represents a passenger, related to a bus.
+
+Tabs:
+Custom tabs are defined for Bus Companies, Buses, Passengers, and a custom dashboard (Bus Manager View) for easy navigation.
+
+Lightning Web Components (LWC):
+busManagerView: Main dashboard component displaying companies, buses, and passengers in a hierarchical, interactive table.
+Uses lightning-datatable for dynamic, responsive data display with custom styling.
+
+Apex Controllers:
+BusController:
+Provides data aggregation logic, returning wrapper classes with nested company, bus, and passenger data for the LWC.
+Exposes methods to run batch processes and retrieve structured data.
+BusStatusUpdateBatch:
+Apex batch class to update bus statuses based on passenger count.
+Can be triggered from the UI via LWC.
+
+Batch Automation:
+Users can trigger the batch process from the UI to automatically update bus statuses (Available, Limited Seats, Full, Over Capacity) based on business logic.
+
+Testing:
+Comprehensive Apex test classes ensure code coverage and reliability for all controllers and batch processes.
+
+Summary:
+The Bus Manager App is a scalable, maintainable Salesforce solution that combines custom objects, Apex logic, and Lightning Web Components to deliver a powerful transportation management experience.
